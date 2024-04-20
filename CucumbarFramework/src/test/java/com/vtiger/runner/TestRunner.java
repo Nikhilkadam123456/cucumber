@@ -10,7 +10,7 @@ import io.cucumber.junit.CucumberOptions;
 		
 		features = "src/test/resources/Features",
 		glue="com.vtiger.stepdefination",
-		dryRun = true,
+		dryRun = false,
 		plugin = { "pretty", "json:target/cucumber-reports/Cucumber.json",
 				             "junit:target/cucumber-reports/Cucumber.xml",
 				             "html:target/cucumber-reports.html"}

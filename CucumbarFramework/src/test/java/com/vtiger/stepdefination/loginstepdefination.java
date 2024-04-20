@@ -17,6 +17,7 @@ public class loginstepdefination {
 	{
 	 driver=new ChromeDriver();   
 	 driver.get("http://localhost:100/");
+	 driver.manage().window().maximize();
 	}
 	@When("user enter vaild crediential")
 	public void user_enter_vaild_crediential() 
