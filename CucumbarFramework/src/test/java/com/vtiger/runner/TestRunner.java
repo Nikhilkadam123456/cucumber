@@ -9,11 +9,13 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		
 		features = "src/test/resources/Features",
-		glue="com.vtiger.stepdefination",
-		dryRun = true,
+		glue= "com.vtiger.stepdefination",
+		dryRun = false,
 		plugin = { "pretty", "json:target/cucumber-reports/Cucumber.json",
 				             "junit:target/cucumber-reports/Cucumber.xml",
-				             "html:target/cucumber-reports.html"}
+				             "html:target/cucumber-reports.html"},
+		tags = "@test4"
+	
 		)
 
 

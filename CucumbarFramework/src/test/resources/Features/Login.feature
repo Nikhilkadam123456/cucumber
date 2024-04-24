@@ -1,13 +1,21 @@
 Feature: login functionility
 
-Scenario: vaild login
-Given user should on login page
-When user enter vaild crediential
-Then user should be on home page   
-And user can see logout link
+Background:
+Given user should be on login page
 
-Scenario: Invaild login
-Given user should on login page
-When user enter Invaild crediential
-Then user should be on login page   
-#And user can see error message
+@test1
+Scenario: valid login
+When user enter valid credentials and click on login button
+Then user should navigate to home page
+And user click on logout link
+
+@test2
+Scenario Outline: Invalid login
+When user enter Invalid userid "<userid>" and password "<password>" credentials and click on login button
+Then user should navigate to login page
+And user can see error message
+Examples:
+|userid|password|
+|admin1|pwd1    |
+|admin2|pwd2    |
+|admin3|pwd3    |
